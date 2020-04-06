@@ -49,10 +49,16 @@ Contact.prototype.fullName = function() {
 }
 
 // Front-end logic
-$(document).ready(function() {
-  var addressbook = new AddressBook();
-  var potato = new Contact("arg", "arg", "123");
-  addressbook.addContact(potato)
-  
+var addressBook = new AddressBook();
 
+$(document).ready(function() {
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
+    var inputtedFirstName = $("input#new-first-name").val();
+    var inputtedLastName = $("input#new-last-name").val();
+    var inputtedPhoneNumber = $("input#new-phone-number").val();
+    var newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+    addressBook.addContact(newContact);
+    console.log(addressBook.contacts);
+  })
 });
