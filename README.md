@@ -1,15 +1,15 @@
-# _My Portfolio_
+# _Address Book_
 
-#### _HTML, CSS, & JavaScript Exercise for Epicodus, 03.27.2020_
+#### _HTML, CSS, & JavaScript Exercise for Epicodus, 04.6.2020_
 
-#### By _**Daniel Merys**_
+#### By _**Daniel Merys & Antonio Cruz**_
 
 ## Description
 
-_This website is rudimentary example of HTML, CSS, Bootstrap, Jquery, and JavaScript skills learned in the first 2 weeks of Epicodus training._
+_This website is rudimentary example of HTML, CSS, Bootstrap, Jquery, and JavaScript skills learned in the first 3 weeks of Epicodus training._
 
-_https://github.com/dkmerys/Prog-Lang-Suggest_
-_https://dkmerys.github.io/Prog-Lang-Suggest_
+_https://github.com/dkmerys/address-book_
+
 
 
 ## Setup/Installation Requirements
