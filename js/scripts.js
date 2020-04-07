@@ -9,6 +9,8 @@ AddressBook.prototype.addContact = function (contact) {
   this.contacts.push(contact);
 }
 
+
+
 AddressBook.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
@@ -30,7 +32,7 @@ AddressBook.prototype.deleteContact = function(id) {
     if (this.contacts[i]) {
       if (this.contacts[i].id ==id) {
         delete this.contacts[i];
-          return true;
+        return true;
       }
     }
   };
@@ -68,16 +70,43 @@ function displayContactDetails(addressBookToDisplay){
   });
   contactsList.html(htmlForContactInfo);
 };
+// $(function() {
+//   $("#myForm").submit(function() {
+//     $("#myForm *").filter(":input").each(function(){
+//       if ($(this).val() == '')
+//         $(this).prop("disabled", true);
+//     });
+
+//     return true; // ensure form still submits
+//   });
+// });
+
 
 function showContact(contactId) {
   var contact = addressBook.findContact(contactId);
   $("#show-contact").show();
-  $(".first-name").html(contact.firstName);
-  $(".last-name").html(contact.lastName);
-  $(".phone-number").html(contact.phoneNumber);
-  $(".physical-address").html(contact.physicalAddress);
-  $(".personal-email").html(contact.emails.personalEmail);
-  $(".work-email").html(contact.emails.workEmail);
+  if(contact.firstName) {
+    $(".first-name").html("<p>First Name: " + contact.firstName + "</p>");
+  };
+  if(contact.lastName) {
+    $(".last-name").html("<p>Last Name: " + contact.lastName + "</p>");
+  };
+  if(contact.phoneNumber) {
+    $(".phone-number").html("<p>Phone Number: " + contact.phoneNumber + "</p>");
+  };
+  if(contact.physicalAddress) {
+    $(".physical-address").html("<p>Physical Address: " + contact.physicalAddress + "</p>");
+  };
+  if(contact.emails.personalEmail || contact.emails.workEmail) {
+    $(".email-list").html("<p>Emails:</p>");
+  };
+  if(contact.emails.personalEmail) {
+    $(".personal-email").html("<li>" + contact.emails.personalEmail + "</li>");
+  };
+  if(contact.emails.workEmail) {
+    $(".work-email").html("<li>" + contact.emails.workEmail + "</li>");
+  };
+  
 
   var buttons = $("#buttons");
   buttons.empty();
